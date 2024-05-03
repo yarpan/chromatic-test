@@ -10,6 +10,10 @@ test('match screenshot logo', async ({ page }) => {
 
 test('match screenshot full page', async ({ page }) => {
   await page.goto('https://github.com');
-  expect(page).toHaveScreenshot({fullPage: true});
+  //await page.screenshot({ path: './screenshots/screenshot.png' });
+  //await page.screenshot({ path: './screenshots/screenlong.png', fullPage: true });
+
+  await expect(page).toHaveScreenshot('screenshot.png');
+  await expect(page).toHaveScreenshot('screenlong.png', {fullPage: true, maxDiffPixelRatio: 0.02 });
 
 });
