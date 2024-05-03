@@ -8,6 +8,7 @@ test('match screenshot logo', async ({ page }) => {
 
 });
 
+
 test('match screenshot full page', async ({ page }) => {
   await page.goto('https://github.com');
   //await page.screenshot({ path: './screenshots/screenshot.png' });
