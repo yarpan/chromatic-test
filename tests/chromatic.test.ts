@@ -1,16 +1,12 @@
-import { test, expect } from '@playwright/test';
+//import { test, expect } from '@playwright/test';
+import { test, expect } from "@chromatic-com/playwright";
 
 
-test('match screenshot logo', async ({ page }) => {
+
+test("Homepage", async ({ page }) => {  
   await page.goto('https://github.com');
-  const logoLocator = page.locator('.octicon-mark-github');
-  expect(await logoLocator.screenshot()).toMatchSnapshot('svg_logo.png');
+  
+  await expect(page).toHaveTitle("GitHub: Let’s build from here · GitHub");  
 
-});
-
-test('match screenshot full page', async ({ page }) => {
-  await page.goto('https://github.com');
-  const logoLocator = page.locator('.octicon-mark-github');
-  expect(await logoLocator.screenshot()).toMatchSnapshot('svg_logo.png');
-
+  
 });
