@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.skip('match screenshot logo', async ({ page }) => {
+test('match screenshot logo', async ({ page }) => {
   await page.goto('https://github.com');
   const logoLocator = page.locator('.octicon-mark-github');
   expect(await logoLocator.screenshot()).toMatchSnapshot('svg_logo.png');
